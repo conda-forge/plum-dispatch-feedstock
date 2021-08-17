@@ -13,7 +13,8 @@ source:
 build:
   number: 0
   skip: true  # [py2k]
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
 
 requirements:
   build:
@@ -22,8 +23,9 @@ requirements:
     - pip
     - python
     - cython >=0.29
-    - setuptools >=41
-  run:
+    - setuptools >=45
+    - setuptools_scm >=3.4
+    - toml  run:
     - python
 
 test:
