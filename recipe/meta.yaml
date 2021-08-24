@@ -1,5 +1,5 @@
 {% set name = "plum-dispatch" %}
-{% set version = "1.5.2" %}
+{% set version = "1.5.3" %}
 
 
 package:
@@ -8,12 +8,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plum-dispatch-{{ version }}.tar.gz
-  sha256: 8987d70bd0a1bfe3272766012b55fc171aa0562f3817543cf84aecf9cd22c60d
+  sha256: af46c3276e97df651480c2097b176a495d04d095928a4ee38d0b4200cdce48a1
 
 build:
   number: 0
   skip: true  # [py2k]
-  script: {{ PYTHON }} -m pip install . -vv
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} 
+  script:
+    - {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
 
 requirements:
   build:
@@ -22,7 +25,9 @@ requirements:
     - pip
     - python
     - cython >=0.29
-    - setuptools >=41
+    - setuptools >=45
+    - setuptools_scm >=3.4
+    - toml  
   run:
     - python
 
