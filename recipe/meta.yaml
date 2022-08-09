@@ -22,12 +22,9 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - {{ compiler('c') }}
   host:
     - pip
     - python
-    - cython >=0.29
     - setuptools >=45
     - setuptools_scm >=3.4
     - toml
