@@ -11,7 +11,7 @@ source:
   sha256: 42c83c1f3f3e7fb9ef6f174637f20167f6d0570f165a09113eed971a39257775
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k]
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
