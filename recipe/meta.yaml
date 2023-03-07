@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py2k]
+  noarch: python
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
@@ -20,11 +20,10 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-  host:
-    - pip
     - python
+  host:
+    - python
+    - pip
     - setuptools >=45
     - setuptools_scm >=3.4
     - toml
@@ -35,7 +34,6 @@ requirements:
 test:
   imports:
     - plum
-    - tests
   commands:
     - pip check
   requires:
@@ -46,7 +44,9 @@ about:
   summary: Multiple dispatch in Python
   license: MIT
   license_file: LICENCE.txt
-
+  doc_url: https://wesselb.github.io/plum
+  dev_url: https://github.com/wesselb/plum
+  
 extra:
   recipe-maintainers:
     - PhilipVinc
