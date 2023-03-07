@@ -1,5 +1,5 @@
 {% set name = "plum-dispatch" %}
-{% set version = "1.7.3" %}
+{% set version = "2.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plum-dispatch-{{ version }}.tar.gz
-  sha256: 42c83c1f3f3e7fb9ef6f174637f20167f6d0570f165a09113eed971a39257775
+  sha256: 37245135dcd37c8e9eaabcfdb72423ef9d1431ec77b93191f4fe8f0b751acd61
 
 build:
   number: 1
@@ -23,18 +23,18 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - pip
     - python
+    - pip
     - setuptools >=45
     - setuptools_scm >=3.4
     - toml
   run:
     - python
+    - beartype >=0.12
 
 test:
   imports:
     - plum
-    - tests
   commands:
     - pip check
   requires:
@@ -45,7 +45,9 @@ about:
   summary: Multiple dispatch in Python
   license: MIT
   license_file: LICENCE.txt
-
+  doc_url: https://wesselb.github.io/plum
+  dev_url: https://github.com/wesselb/plum
+  
 extra:
   recipe-maintainers:
     - PhilipVinc
