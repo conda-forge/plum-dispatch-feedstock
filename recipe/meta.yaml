@@ -30,6 +30,7 @@ requirements:
     - toml
   run:
     - python
+    - beartype >= 1.12
 
 test:
   imports:
