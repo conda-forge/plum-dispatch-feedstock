@@ -9,6 +9,10 @@ Package license: MIT
 
 Summary: Multiple dispatch in Python
 
+Development: https://github.com/wesselb/plum
+
+Documentation: https://wesselb.github.io/plum
+
 Current build status
 ====================
 
