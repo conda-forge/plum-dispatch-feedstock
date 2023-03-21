@@ -1,5 +1,5 @@
 {% set name = "plum-dispatch" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/plum-dispatch-{{ version }}.tar.gz
-  sha256: 37245135dcd37c8e9eaabcfdb72423ef9d1431ec77b93191f4fe8f0b751acd61
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: e6f1fef8ea7f49d87faf874899895d7bd1d71fccea26f138239436043088f597
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py2k]
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
@@ -47,7 +47,7 @@ about:
   license_file: LICENCE.txt
   doc_url: https://wesselb.github.io/plum
   dev_url: https://github.com/wesselb/plum
-  
+
 extra:
   recipe-maintainers:
     - PhilipVinc
