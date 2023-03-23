@@ -11,23 +11,17 @@ source:
   sha256: e6f1fef8ea7f49d87faf874899895d7bd1d71fccea26f138239436043088f597
 
 build:
-  number: 1
-  skip: true  # [py2k]
-  script_env:
-    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  number: 0
+  noarch: python
   script:
     - {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python
+    - python >=3.8
     - pip
-    - setuptools >=45
-    - setuptools_scm >=3.4
-    - toml
+    - hatchling >=1.10
+    - hatch-vcs >=0.3
   run:
     - python
     - beartype >=0.12
