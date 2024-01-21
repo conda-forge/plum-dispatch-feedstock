@@ -25,6 +25,7 @@ requirements:
   run:
     - python >=3.8
     - beartype >=0.12
+    - rich >=10.0
 
 test:
   imports:
