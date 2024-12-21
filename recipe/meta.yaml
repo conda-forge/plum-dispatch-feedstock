@@ -11,19 +11,19 @@ source:
   sha256: db09f143ccf8f8c2ca4440349e895fe4655f2ad42102988693bea1e6991ead35
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - {{ PYTHON }} -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - hatchling >=1.10
     - hatch-vcs >=0.3
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - beartype >=0.12
     - rich >=10.0
 
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/wesselb/plum
