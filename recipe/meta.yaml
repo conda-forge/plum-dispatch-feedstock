@@ -1,5 +1,5 @@
 {% set name = "plum-dispatch" %}
-{% set version = "2.7.1" %}
+{% set version = "2.8.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/plum_dispatch-{{ version }}.tar.gz
-  sha256: 38f04f42f2cc4f726083244e52ee04cfd155f53fad55423ec0fd1bfee3fc97a9
+  sha256: 453fc7bc67d2a39492c834b00c94d816871d148b5a0a5d3f49e2bbf2391e2619
 
 build:
   number: 0
