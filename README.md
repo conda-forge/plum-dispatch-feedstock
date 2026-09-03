@@ -20,7 +20,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/plum-dispatch-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/plum-dispatch-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -42,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `plum-dispatch` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install plum-dispatch
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install plum-dispatch
 ```
 
-It is possible to list all of the versions of `plum-dispatch` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add plum-dispatch
+# for installing globally
+pixi global install plum-dispatch
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `plum-dispatch` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search plum-dispatch --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search plum-dispatch --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search plum-dispatch --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -78,6 +122,8 @@ mamba repoquery whoneeds plum-dispatch --channel conda-forge
 # List dependencies of `plum-dispatch`:
 mamba repoquery depends plum-dispatch --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
