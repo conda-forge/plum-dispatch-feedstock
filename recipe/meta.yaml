@@ -1,5 +1,5 @@
 {% set name = "plum-dispatch" %}
-{% set version = "2.10.0" %}
+{% set version = "2.10.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/plum_dispatch-{{ version }}.tar.gz
-  sha256: fd5caa4e0edb50a0d7974599335f2a37c4b9c083891e54d768aad8256059acd3
+  sha256: 93aa1ec5c4683c0777b9d7d1ccc0b31e0e82f38399116345b4ed8d0fb67cc66e
 
 build:
   number: 0
